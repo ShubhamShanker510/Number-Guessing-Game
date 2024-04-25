@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0)); // Seed the random number generator
+
+    int magicalNumber = rand() % 100 + 1; // Generate a random number between 1 and 100
+    int playerGuess;
+    int attempts = 0;
+
+    cout << "Welcome to the Enchanted Forest!\n";
+    cout << "A magical creature has thought of a number between 1 and 100.\n";
+    cout << "Can you guess the number? Let's begin the adventure!\n";
+
+    do {
+        cout << "Enter your guess: ";
+        cin >> playerGuess;
+        attempts++;
+
+        if (playerGuess > magicalNumber) {
+            cout << "Oops! Your guess is too high. Try a smaller number.\n";
+        } else if (playerGuess < magicalNumber) {
+            cout << "Oops! Your guess is too low. Try a larger number.\n";
+        }
+    } while (playerGuess != magicalNumber);
+
+      cout << "Congratulations!  You've found the magical number in " << attempts << " attempts.\n";
+      cout << "Thank you for playing in the Enchanted Forest! \n";
+
+    return 0;
+}
